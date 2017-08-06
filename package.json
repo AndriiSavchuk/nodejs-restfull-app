@@ -1,0 +1,11 @@
+{
+  "name": "nodejs-restfull-app",
+  "version": "1.0.0",
+  "description": "learn rest api on nodejs + express + mongodb",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrii S",
+  "license": "ISC"
+}
