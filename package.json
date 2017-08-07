@@ -4,8 +4,11 @@
   "description": "learn rest api on nodejs + express + mongodb",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app"
   },
   "author": "Andrii S",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.4"
+  }
 }
