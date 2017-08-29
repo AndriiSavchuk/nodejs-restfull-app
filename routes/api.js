@@ -8,7 +8,12 @@ router.get('/users', (req, res) => {
 
 // Add a new user to the DB
 router.post('/users', (req, res) => {
-  res.send({type: 'POST'});
+  console.log(req.body)
+  res.send({
+    type: 'POST',
+    name: req.body.name,
+    surname: req.body.surname
+  });
 });
 
 // Update user in DB
