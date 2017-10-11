@@ -21,7 +21,7 @@ router.put('/users/:id', (req, res) => {
   res.send({type: 'PUT'});
 });
 
-// delete user from DB
+// Delete user from DB
 router.delete('/users/:id', (req, res) => {
   res.send({type: 'DELETE'});
 });
