@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const User = require('../models/user');
 
 // Getting list of users from DB
 router.get('/users', (req, res) => {
@@ -7,12 +8,20 @@ router.get('/users', (req, res) => {
 });
 
 // Add a new user to the DB
+
+// router.post('/users', (req, res) => {
+//   var user = new User(req.body);
+//   user.save();
+//   res.send({
+//     type: 'POST',
+//     name: req.body.name,
+//     rank: req.body.rank
+//   });
+// });
+
 router.post('/users', (req, res) => {
-  console.log(req.body)
-  res.send({
-    type: 'POST',
-    name: req.body.name,
-    surname: req.body.surname
+  User.create(req.body).then(user => {
+    res.send(user);
   });
 });
 
