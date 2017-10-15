@@ -11,7 +11,7 @@ mongoose.connect('mongodb://localhost/users', {
   useMongoClient: true
 });
 
-//Overriding mongoose depricated Promise
+// Overriding mongoose depricated Promise
 mongoose.Promise = global.Promise;
 
 // Set up Body Parser middleware
@@ -19,6 +19,12 @@ app.use(bodyParser.json());
 
 // Using routes
 app.use('/api', routes);
+
+// Error handling middleware
+app.use((err, req, res, next) => {
+  // console.log(err);
+  res.status(422).send({error: err._message});
+});
 
 // Set up port
 const port = process.env.port || 3000;
