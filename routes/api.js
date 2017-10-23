@@ -32,7 +32,10 @@ router.put('/users/:id', (req, res, next) => {
 
 // Delete user from DB
 router.delete('/users/:id', (req, res, next) => {
-  res.send({type: 'DELETE'});
+  User.findByIdAndRemove({ _id: req.params.id })
+    .then(user => {
+      res.send(user);
+    });
 });
 
 module.exports = router;
