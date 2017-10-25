@@ -4,7 +4,9 @@ const User = require('../models/user');
 
 // Getting list of users from DB
 router.get('/users', (req, res, next) => {
-  res.send({type: 'GET'});
+  User.find({}).then(users => {
+    res.send(users);
+  });
 });
 
 // Add a new user to the DB
